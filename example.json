@@ -14,6 +14,36 @@
            ]
        }
        ]
+       },{
+         "name": "analytics",
+         "children": [
+         {
+           "name": "optimization",
+           "children": [
+           {"name": "AspectRatioBanker", "size": 1000}
+           ]
+       }
+       ]
+       },{
+         "name": "analytics",
+         "children": [
+         {
+           "name": "optimization",
+           "children": [
+           {"name": "AspectRatioBanker", "size": 7074}
+           ]
+       }
+       ]
+       },{
+         "name": "analytics",
+         "children": [
+         {
+           "name": "optimization",
+           "children": [
+           {"name": "AspectRatioBanker", "size": 1000}
+           ]
+       }
+       ]
        }, {
          "name": "analytics",
          "children": [
