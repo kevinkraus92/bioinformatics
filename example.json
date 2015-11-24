@@ -1,0 +1,52 @@
+{
+   "name": "algo",
+   "children": [
+   {
+     "name": "vis",
+     "children": [
+     {
+         "name": "analytics",
+         "children": [
+         {
+           "name": "optimization",
+           "children": [
+           {"name": "AspectRatioBanker", "size": 7074}
+           ]
+       }
+       ]
+       }, {
+         "name": "analytics",
+         "children": [
+         {
+           "name": "optimization",
+           "children": [
+           {"name": "AspectRatioBanker", "size": 7074}
+           ]
+       }
+       ]
+       }, {
+         "name": "analytics",
+         "children": [
+         {
+           "name": "optimization",
+           "children": [
+           {"name": "AspectRatioBanker", "size": 7074}
+           ]
+       }
+       ]
+       },
+       {
+         "name": "analytics",
+         "children": [
+         {
+           "name": "optimization",
+           "children": [
+           {"name": "AspectRatioBanker", "size": 7074}
+           ]
+       }
+       ]
+   }
+   ]
+}
+]
+}

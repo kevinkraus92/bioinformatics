@@ -247,7 +247,7 @@ FEATURES             Location/Qualifiers
                      /note="gene fragment due to a deletion event"
                      /pseudo
      mobile_element  242931..244595
-                     /mobile_element_type="transposon:Non-LTR Transposon
+                    /mobile_element_type="transposon:Non-LTR Transposon
                      Gobefo_634M12-1"
      mobile_element  247471..247675
                      /mobile_element_type="transposon:MITE Ganesh_634M12-1"
