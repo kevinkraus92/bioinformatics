@@ -1,82 +1,83 @@
 {
-   "name": "algo",
-   "children": [
-   {
-     "name": "vis",
+    "name":"algo",
      "children": [
-     {
-         "name": "analytics",
+    
+      {
          "children": [
          {
-           "name": "optimization",
            "children": [
-           {"name": "AspectRatioBanker", "size": 7074}
-           ]
-       }
-       ]
-       },{
-         "name": "analytics",
-         "children": [
-         {
-           "name": "optimization",
-           "children": [
-           {"name": "AspectRatioBanker", "size": 1000}
-           ]
-       }
-       ]
-       },{
-         "name": "analytics",
-         "children": [
-         {
-           "name": "optimization",
-           "children": [
-           {"name": "AspectRatioBanker", "size": 7074}
-           ]
-       }
-       ]
-       },{
-         "name": "analytics",
-         "children": [
-         {
-           "name": "optimization",
-           "children": [
-           {"name": "AspectRatioBanker", "size": 1000}
+           {"name": "mono", "size": 1000,"desc" : "Description"}
            ]
        }
        ]
        }, {
-         "name": "analytics",
          "children": [
          {
-           "name": "optimization",
            "children": [
-           {"name": "AspectRatioBanker", "size": 7074}
+           {"name": "pato", "size": 2000,"desc" : "Description"}
            ]
        }
        ]
        }, {
-         "name": "analytics",
          "children": [
          {
-           "name": "optimization",
            "children": [
-           {"name": "AspectRatioBanker", "size": 7074}
+           {"name": "oso", "size": 1500,"desc" : "Description"}
            ]
        }
        ]
        },
        {
-         "name": "analytics",
          "children": [
          {
-           "name": "optimization",
            "children": [
-           {"name": "AspectRatioBanker", "size": 7074}
+           {"name": "caballo", "size": 1250,"desc" : "Description"}
+           ]
+       }
+       ]
+   },{
+         "children": [
+         {
+           "children": [
+           {"name": "elefante", "size": 1000,"desc" : "Description"}
+           ]
+       }
+       ]
+       }, {
+         "children": [
+         {
+           "children": [
+           {"name": "canguro", "size": 2000,"desc" : "Description"}
+           ]
+       }
+       ]
+       }, {
+         "children": [
+         {
+           "children": [
+           {"name": "homo sapiens", "size": 1500,"desc" : "Description"}
+           ]
+       }
+       ]
+       },
+       {
+         "children": [
+         {
+           "children": [
+           {"name": "cucaracha", "size": 1250,"desc" : "Description"}
+           ]
+       }
+       ]
+   },
+       {
+         "children": [
+         {
+           "children": [
+           {"name": "gigolo bazterrica", "size": 1250,"desc" : "Description"}
            ]
        }
        ]
    }
    ]
-}
-]
+
 }

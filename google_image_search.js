@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-  <title>Google Search API Sample</title>
-  <script src="https://www.google.com/jsapi"></script>
-  <script type="text/javascript">
+google.load('search', '1');
 
-  google.load('search', '1');
+var imageSearch;
 
-  var imageSearch;
-
-  function searchComplete() {
+function searchComplete() {
 
         // Check that we got results
         if (imageSearch.results && imageSearch.results.length > 0) {
@@ -23,10 +15,10 @@
           var results = imageSearch.results;
           var i = 0
             // For each result write it's title and image to the screen
-          var result = results[i];
-          var imgContainer = document.createElement('div');
-          var title = document.createElement('div');
-          
+            var result = results[i];
+            var imgContainer = document.createElement('div');
+            var title = document.createElement('div');
+
           // We use titleNoFormatting so that no HTML tags are left in the 
           // title
           title.innerHTML = result.titleNoFormatting;
@@ -36,15 +28,10 @@
           newImg.src=result.tbUrl;
 
           console.log(result.tbUrl)
-          //imgContainer.appendChild(title);
-          imgContainer.appendChild(newImg);
-
-          // Put our title + image in the content
-          contentDiv.appendChild(newImg);
         }
       }
 
-      function OnLoad() {
+      function searchImage() {
 
         // Create an Image Search instance.
         imageSearch = new google.search.ImageSearch();
@@ -54,21 +41,7 @@
         imageSearch.setSearchCompleteCallback(this, searchComplete, null);
 
         // Find me a beautiful car.
-        imageSearch.execute("Monkey");
+        imageSearch.execute(string);
+
         
       }
-      google.setOnLoadCallback(OnLoad);
-      </script>
-
-    </head>
-    <body style="font-family: Arial;border: 0 none;">
-      <div id="content">Loading...</div>
-      <a href="treemap.html"> treemap </a>
-      <a href="treemapz.html"> treemap zoomable </a>
-    </body>
-    </html>
-
-
-
-    <!-- http://mbostock.github.io/d3/talk/20111018/treemap.html -->
-    
