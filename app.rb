@@ -23,9 +23,17 @@ class Memo
   end
 end
 
+class MainHTML
+
+  def self.getLayout
+    return "<html><head><title>Bio-ITBA</title><link href='https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css' rel='stylesheet' type='text/css' /></head><body style='margin-left:50px'><div style='width:100%, margin-left:50px'><h1 class='text-info'>Species Blastp By Hanna, Itzcovich, Kraus</h1><br><form method=post><div><textarea rows='20' cols='100' name=fasta style='width:50%'></textarea></div><button type='button submit' class='btn btn-primary'>Run</button></form></html></div></body>"
+  end
+
+end
+
 Cuba.define do
   on get, root do
-    res.write("<form method=post><textarea name=fasta></textarea><button type=submit>run</button></form>")
+    res.write(MainHTML.getLayout)
   end
 
   on get, "show/:id" do |id|
@@ -42,9 +50,9 @@ Cuba.define do
 
     api_result = {}
 
-    api_result[:children] = results.map do |organism, percent_identity,query_len, region| 
+    api_result[:children] = results.map do |organism, percent_identity, identity, query_len, overlap, query_seq, target_seq, accession| 
       {
-        children: [ { children: [ { name: organism, size: percent_identity, desc: percent_identity }] } ]
+        children: [ { children: [ { name: organism, size: percent_identity, desc: percent_identity, identity: identity, len:query_len, overlap: overlap, query:query_seq, target: target_seq, accession: accession}] } ]
       }
     end
 
@@ -67,7 +75,7 @@ Cuba.define do
       number_accessor = accessor[1..-2]
       str = open("http://www.uniprot.org/uniprot/#{number_accessor}.txt").read
 
-      results << [Bio::UniProtKB.new(str).os.first["os"], hit.hsps.first.score, hit.len, hit.overlap]
+      results << [Bio::UniProtKB.new(str).os.first["os"], hit.hsps.first.score, hit.identity, hit.len, hit.overlap, hit.query_seq, hit.target_seq, number_accessor]
     end
 
     id =  Memo.set(results)
