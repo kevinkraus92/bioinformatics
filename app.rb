@@ -26,7 +26,7 @@ end
 class MainHTML
 
   def self.getLayout
-    return "<html><head><title>Bio-ITBA</title><link href='https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css' rel='stylesheet' type='text/css' /></head><body style='margin-left:50px'><div style='width:100%, margin-left:50px'><h1 class='text-info'>Species Blastp By Hanna, Itzcovich, Kraus</h1><br><form method=post><div><textarea rows='20' cols='100' name=fasta style='width:50%'></textarea></div><input type='radio' name='type' value='fasta' checked>Protein Fasta<br><input type='radio' name='type' value='gen'>GenBank mRNA<br><br><button type='button submit' class='btn btn-primary'>Run</button></form></html></div></body>"
+    return "<html><head><title>Bio-ITBA</title><link href='https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css' rel='stylesheet' type='text/css' /></head><body style='margin-left:50px'><div style='width:100%, margin-left:50px'><h1 class='text-info'>Species Blastp By Hanna, Itzcovich, Kraus</h1><br><form method=post><div><h3 class='text-info'>Data</h3><textarea rows='20' cols='100' name=fasta style='width:50%'></textarea></div><div><h3 class='text-info'>Size</h3><textarea rows='1' cols='100' name=size_chosen style='width:10%'></textarea></div><input type='radio' name='type' value='fasta' checked>Protein Fasta<br><input type='radio' name='type' value='gen'>GenBank mRNA<br><br><button type='button submit' class='btn btn-primary'>Run</button></form></html></div></body>"
   end
 
 end
@@ -75,13 +75,14 @@ Cuba.define do
 
     end
       
+    num = req.POST["size_chosen"].to_i
 
     results = []
 
     report = blast.query(fasta.entry)
 
     report.hits.each_with_index do |hit, i|
-      break if i >= 15
+      break if i >= num
 
       accessor = hit.definition.split(" ")[0]
       number_accessor = accessor[1..-2]
