@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Google Search API Sample</title>
+    <style>
+      .organism { 
+        font-size: 24px;
+      }
+    </style>
+    <script src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      google.load('search', '1');
+
+      var imageSearch;
+      var searches = [];
+
+      function searchComplete(i, organism, overlap) {
+        var search = searches[i];
+
+        // Check that we got results
+        if (search.results && search.results.length > 0) {
+
+          var results = search.results;
+          var result = results[0];
+
+          var contentDiv = document.getElementById('content');
+
+          var imgContainer = document.createElement('div');
+          var title = document.createElement('div');
+          title.className = "organism";
+
+          title.innerHTML = organism;
+
+          imgContainer.appendChild(title);
+          var newImg = document.createElement('img');
+
+          newImg.src = result.tbUrl;
+          imgContainer.appendChild(newImg);
+
+          contentDiv.appendChild(imgContainer);
+        }
+      }
+
+    function OnLoad() {
+      <% i = 0 %>
+      <% results.each do |organism, percent_identity| %>
+        // Create an Image Search instance.
+        imageSearch = new google.search.ImageSearch();
+
+        imageSearch.setSearchCompleteCallback(this, searchComplete, [<%= i %>, '<%= organism %>', <%= percent_identity %>]);
+
+        imageSearch.execute('<%= organism %>');
+
+        searches[<%= i %>] = imageSearch;
+
+        <% i += 1 %>
+      <% end %>
+    }
+
+      google.setOnLoadCallback(OnLoad);
+    </script>
+
+    </head>
+    <body style="font-family: Arial;border: 0 none;">
+      <div id="content"></div>
+    </body>
+  </html>
+
