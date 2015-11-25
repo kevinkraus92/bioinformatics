@@ -145,12 +145,12 @@ function zoom(d) {
     t.select(".species")
       .attr("x", function(d) { return kx * d.dx / 2; })
       .attr("y", 100)
-      .attr("style","fill: black; stroke: white; font-size: 48px")
+      .attr("style","fill: black; font-size: 60px")
       .style("opacity", function(d) { return kx * d.dx > d.w ? 1 : 0; });
     t.select(".desc")
       .attr("x", function(d) { return kx * d.dx / 2; })
       .attr("y", 400)
-      .attr("style","fill: black; stroke: white; font-size: 48px")
+      .attr("style","fill: black; font-size: 60px")
       .style("opacity", function(d) { return kx * d.dx > d.w ? 1 : 0; });
 
     zoomIn= true;
@@ -176,17 +176,11 @@ function zoom(d) {
       .attr("opacity",1);
 
     t.select(".species")
-      .attr("class","species")
-      .attr("x", function(d) { return d.dx / 2; })
-      .attr("y", function(d) { return d.dy / 2; })
-      .attr("dy", ".35em")
-      .attr("text-anchor", "middle")
-      .text(function(d) { return d.name; })
+      .attr("style","fill: black; font-size: 0px")
       .style("opacity", 0);
 
     t.select(".desc")
-      .attr("x", function(d) { return kx * d.dx / 2; })
-      .attr("y", function(d) { return ky * d.dy / 2; })
+      .attr("style","fill: black; font-size: 0px")
       .style("opacity",0);
 
     zoomIn= false;
@@ -214,10 +208,9 @@ function searchComplete(cell,imageSearch,i) {
 
     var t = svg.selectAll("image.images");
 
+    var uri_dec = decodeURIComponent(result.url);
 
-    console.log(t[0][i-1]);
-
-    t[0][i-1].setAttribute("href",result.tbUrl);
+    t[0][i-1].setAttribute("href",uri_dec);
 
 
   }
@@ -227,6 +220,7 @@ function searchImage(string,cell,i) {
 
   // Create an Image Search instance.
   var imageSearch = new google.search.ImageSearch();
+
 
   // Set searchComplete as the callback function when a search is 
   // complete.  The imageSearch object will have results in it.

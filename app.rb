@@ -42,9 +42,9 @@ Cuba.define do
 
     api_result = {}
 
-    api_result[:children] = results.map do |organism, percent_identity| 
+    api_result[:children] = results.map do |organism, percent_identity,query_len, region| 
       {
-        children: [ { children: [ { name: organism, size: percent_identity, desc: "" }] } ]
+        children: [ { children: [ { name: organism, size: percent_identity, desc: percent_identity }] } ]
       }
     end
 
@@ -61,13 +61,13 @@ Cuba.define do
 
     report = blast.query(fasta.entry)
     report.hits.each_with_index do |hit, i|
-      break if i >= 5
+      break if i >= 10
 
       accessor = hit.definition.split(" ")[0]
       number_accessor = accessor[1..-2]
       str = open("http://www.uniprot.org/uniprot/#{number_accessor}.txt").read
 
-      results << [Bio::UniProtKB.new(str).os.first["os"], hit.hsps.first.score]
+      results << [Bio::UniProtKB.new(str).os.first["os"], hit.hsps.first.score, hit.len, hit.overlap]
     end
 
     id =  Memo.set(results)

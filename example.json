@@ -1,5 +1,4 @@
 {
-    "name":"algo",
      "children": [
     
       {
@@ -64,7 +63,7 @@
          "children": [
          {
            "children": [
-           {"name": "cucaracha", "size": 1250,"desc" : "Description"}
+           {"name": "cucaracha", "size": 20000,"desc" : "Description"}
            ]
        }
        ]
@@ -79,5 +78,4 @@
        ]
    }
    ]
-
 }
