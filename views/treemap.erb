@@ -175,25 +175,25 @@ body {
         .text(function(d) { return "Bit Score: "+ d.desc; })
         .style("opacity", 0);
 
-      cell.append("svg:text")
-        .attr("class","target")
-        .attr("x", function(d) { return d.dx / 2; })
-        .attr("y", function(d) { return d.dy / 2; })
-        .attr("dy", ".35em")
-        .attr("text-anchor", "middle")
-        .attr("style","fill: black; font-size: 0px")
-        .text(function(d) { return "Target: "+ d.target; })
-        .style("opacity", 0);
+      // cell.append("svg:text")
+      //   .attr("class","target")
+      //   .attr("x", function(d) { return d.dx / 2; })
+      //   .attr("y", function(d) { return d.dy / 2; })
+      //   .attr("dy", ".35em")
+      //   .attr("text-anchor", "middle")
+      //   .attr("style","fill: black; font-size: 0px")
+      //   .text(function(d) { return "Target: "+ d.target; })
+      //   .style("opacity", 0);
 
-      cell.append("svg:text")
-        .attr("class","query")
-        .attr("x", function(d) { return d.dx / 2; })
-        .attr("y", function(d) { return d.dy / 2; })
-        .attr("dy", ".35em")
-        .attr("text-anchor", "middle")
-        .attr("style","fill: black; font-size: 0px")
-        .text(function(d) { return "Query: "+ d.query; })
-        .style("opacity", 0);
+      // cell.append("svg:text")
+      //   .attr("class","query")
+      //   .attr("x", function(d) { return d.dx / 2; })
+      //   .attr("y", function(d) { return d.dy / 2; })
+      //   .attr("dy", ".35em")
+      //   .attr("text-anchor", "middle")
+      //   .attr("style","fill: black; font-size: 0px")
+      //   .text(function(d) { return "Query: "+ d.query; })
+      //   .style("opacity", 0);
 
       cell.append("svg:a")
         .attr("xlink:href",function(d) { return "http://www.uniprot.org/uniprot/"+d.accession+".txt"; })
@@ -274,17 +274,17 @@ function zoom(d) {
       .attr("style","fill: black; font-size: 60px")
       .style("opacity", function(d) { return kx * d.dx > d.w ? 1 : 0; });
 
-    t.select(".query")
-      .attr("x", function(d) { return kx * d.dx / 2; })
-      .attr("y", 500)
-      .attr("style","fill: black; font-size: 15px")
-      .style("opacity", function(d) { return kx * d.dx > d.w ? 1 : 0; });
+    // t.select(".query")
+    //   .attr("x", function(d) { return kx * d.dx / 2; })
+    //   .attr("y", 500)
+    //   .attr("style","fill: black; font-size: 15px")
+    //   .style("opacity", function(d) { return kx * d.dx > d.w ? 1 : 0; });
 
-    t.select(".target")
-      .attr("x", function(d) { return kx * d.dx / 2; })
-      .attr("y", 520)
-      .attr("style","fill: black; font-size: 15px")
-      .style("opacity", function(d) { return kx * d.dx > d.w ? 1 : 0; });
+    // t.select(".target")
+    //   .attr("x", function(d) { return kx * d.dx / 2; })
+    //   .attr("y", 520)
+    //   .attr("style","fill: black; font-size: 15px")
+    //   .style("opacity", function(d) { return kx * d.dx > d.w ? 1 : 0; });
 
     t.select(".link")
       .attr("x", function(d) { return kx * d.dx / 2; })
@@ -334,13 +334,13 @@ function zoom(d) {
       .attr("style","fill: black; font-size: 0px")
       .style("opacity",0);
 
-    t.select(".query")
-      .attr("style","fill: black; font-size: 0px")
-      .style("opacity",0);
+    // t.select(".query")
+    //   .attr("style","fill: black; font-size: 0px")
+    //   .style("opacity",0);
 
-    t.select(".target")
-      .attr("style","fill: black; font-size: 0px")
-      .style("opacity",0);
+    // t.select(".target")
+    //   .attr("style","fill: black; font-size: 0px")
+    //   .style("opacity",0);
 
     t.select(".link")
       .attr("style","fill: black; font-size: 0px")
